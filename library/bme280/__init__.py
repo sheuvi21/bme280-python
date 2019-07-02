@@ -22,14 +22,14 @@ class S16Adapter(Adapter):
     """Convert unsigned 16bit integer to signed."""
 
     def _decode(self, value):
-        return struct.unpack('<h', _int_to_bytes(value, 2))[0]
+        return struct.unpack('<h', str(_int_to_bytes(value, 2)))[0]
 
 
 class U16Adapter(Adapter):
     """Convert from bytes to an unsigned 16bit integer."""
 
     def _decode(self, value):
-        return struct.unpack('<H', _int_to_bytes(value, 2))[0]
+        return struct.unpack('<H', str(_int_to_bytes(value, 2)))[0]
 
 
 class H5Adapter(S16Adapter):
